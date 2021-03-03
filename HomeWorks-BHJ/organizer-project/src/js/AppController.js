@@ -102,7 +102,7 @@ export default class AppController {
     this.ws.onmessage = (e) => handlers.onWSMessage(this, e);
   }
 
-  getModal(modalName) {
+  getModalMy(modalName) {
     return this.modals[modalName];
   }
 }

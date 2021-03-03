@@ -6,7 +6,7 @@ function formStream$(modal) {
   const form = modal.getForm();
 
   return fromEvent(form, 'click').pipe(
-    
+
     filter(({ target }) => target.classList.contains('modal-btn')),
     switchMap((event) => {
       if (event.target.classList.contains('cancel-btn')) {
@@ -62,14 +62,14 @@ export function getTaskPossition$(modal) {
 
 export function newTaskStream$(manager) {  //возвращаем getCerrentPosition$, если ошибка, то вызывает getForm() из Modal.js - getForm может выдать 'Invalid coords'.
 
-  const modal = manager.getModal('geoModal');
+  const modal = manager.getModalMy('geoModal');
 
    return of({}).pipe(
     switchMap(() => {
       if (!manager.state.conditions.geo) { //переключается на сервере
         return of(null);
       }
-     
+
 
       return getTaskPossition$(modal).pipe(
         catchError(() => formStream$(modal)),

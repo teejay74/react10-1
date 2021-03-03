@@ -35,7 +35,7 @@ export default function onStickClickHandler(event) {
 
     const stream$ = newTaskStream$(this).subscribe((data) => {
       if (data === 'Invalid coords') {
-        this.getModal('geoModal').showError('Вы ввели неправильные координаты!');
+        this.getModalMy('geoModal').showError('Вы ввели неправильные координаты!');
         return;
       }
 
@@ -55,7 +55,7 @@ export default function onStickClickHandler(event) {
 
     newTaskStream$(this).subscribe((data) => {
       if (data === 'Invalid coords') {
-        this.getModal('geoModal').showError('Вы ввели неправильные координаты!');
+        this.getModalMy('geoModal').showError('Вы ввели неправильные координаты!');
         return;
       }
 

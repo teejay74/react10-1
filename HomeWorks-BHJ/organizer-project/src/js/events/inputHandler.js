@@ -9,7 +9,7 @@ import { newTaskStream$ } from '../functions/newTaskFunctions';
 
 export default function myInputHandler(event) {
 
- 
+
   const { target, type, currentTarget } = event;
   const { classList } = target;
 
@@ -41,17 +41,17 @@ export default function myInputHandler(event) {
 
     const stream$ = newTaskStream$(this).subscribe((data) => {
       if (data === 'Invalid coords') {
-        this.getModal('geoModal').showError('Вы ввели неправильные координаты!');
+        this.getModalMy('geoModal').showError('Вы ввели неправильные координаты!');
         return;
       }
-  
+
       createTextTask(this, Task, { content, coords: data });
       updateStates(this, 'newTask', this.creatingTask);
       this.creatingTask = null;
       document.querySelector('.send_icon').classList.remove('active');
       stream$.unsubscribe();
     });
-  
+
   }
 
 }
