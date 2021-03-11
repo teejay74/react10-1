@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic);
+/* @import url(https://fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic); */
 body,
 html {
   margin: 0;
@@ -116,7 +116,7 @@ h3 {
   height:100%;
   opacity:0;
   filter: alpha(opacity=0);
- background:url('./item-black.jpg');
+  background:url('./item-black.jpg');
   background-size:cover;
   -webkit-transition:opacity .4s ease;
           transition:opacity .4s ease;
